@@ -7,7 +7,7 @@ const Home = () => {
       <div className="flex justify-around my-auto w-full h-screen items-center">
         <div className=" text-white border border-white w-[450px] h-[382px] ">
           <h2>SO, YOU WANT TO TRAVEL TO</h2>
-          <h1>SPACE  </h1>
+          <h1>SPACE</h1>
           <p>
             Let's face it: if you want to go to space, you might as well
             genuinegfdggfd gfd ggf ly go to outer space and not hover kind of on the edge of it.
