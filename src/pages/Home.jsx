@@ -10,9 +10,9 @@ const Home = () => {
           <h1>SPACE</h1>
           <p>
             Let's face it: if you want to go to space, you might as well
-            genuinegfdggfd gfd ggf ly go to outer space and not hover kind of on the edge of it.
-            Well sit back, and relaxe because we'll give you a truly out of this
-            world experience.
+            genuinegfdggfd gfd ggf ly go to outer space and not hover kind of on
+            the edge of it. Well sit back, and relaxe because we'll give you a
+            truly out of this world experience.
           </p>
         </div>
         <div className=" flex justify-center items-center text-black border border-white w-[274px] h-[274px] bg-white rounded-full">
