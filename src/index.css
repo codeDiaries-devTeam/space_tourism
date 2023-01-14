@@ -1,6 +1,12 @@
-@tailwind base;
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@100;200;300;400;500&family=Bellefair&display=swap");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 .home {
   background-image: url("./assets/home/background-home-desktop.jpg");
@@ -9,4 +15,23 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.destination {
+  background: url("./assets/destination/background-destination-desktop.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-destination {
+  animation: turn 100s linear infinite;
 }
