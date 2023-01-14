@@ -1,14 +1,13 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/shared/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const navigation = [
-  { name: "HOME", to: "/", current: true },
-  { name: "DESTINATION", to: "/destination", current: false },
-  { name: "CREW", to: "#", current: false },
-  { name: "TECHNOLOGY", to: "#", current: false },
+  { name: "HOME", to: "/" },
+  { name: "DESTINATION", to: "/destination" },
+  { name: "CREW", to: "/crew" },
+  { name: "TECHNOLOGY", to: "/technology" },
 ];
 
 function classNames(...classes) {
@@ -17,9 +16,9 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="fixed mt-6 w-full">
+    <Disclosure as="nav" className="fixed md:mt-6 ">
       {({ open }) => (
-        <div className="">
+        <div className="min-w-full">
           <div className="w-full px-2 sm:px-6 lg:px-20">
             <div className="relative flex h-16 items-center justify-around">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -33,8 +32,9 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-                <div className="flex flex-shrink-0 items-center">
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between ">
+                {/*flex-row sm:flex-row-reverse */}
+                <NavLink className="flex flex-shrink-0 items-center" to="/">
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src={logo}
@@ -45,18 +45,16 @@ export default function Navbar() {
                     src={logo}
                     alt="Your Company"
                   />
-                </div>
-                <div className="hidden sm:ml-6 sm:block bg-[rgba(255, 255, 255, 0.04)]">
-                  <div className="flex space-x-4">
+                </NavLink>
+                <div className=" ml-36 border-b border-gray-500 h-1 w-[600px] my-auto hidden md:block"></div>
+                <div className="hidden sm:ml-6 sm:block rgba(255, 255, 255, 0.04) backdrop-blur-2xl">
+                  <div className="flex space-x-4 w-[650px] p-5  ">
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
                         to={item.to}
                         className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
+                          "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -74,8 +72,8 @@ export default function Navbar() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  as="a" // link
+                  to={item.to}
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"

@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Destination from "../pages/Destination";
 import Home from "../pages/Home";
 import datas from "../data.json";
+import Crew from "../pages/Crew";
+import Technology from "../pages/Technology";
 
 const AppRouter = () => {
   return (
@@ -15,6 +17,11 @@ const AppRouter = () => {
           <Route
             path="/destination"
             element={<Destination data={datas.destinations} />}
+          />
+          <Route path="/crew" element={<Crew data={datas.crew} />} />
+          <Route
+            path="/technology"
+            element={<Technology data={datas.technology} />}
           />
         </Routes>
       </div>

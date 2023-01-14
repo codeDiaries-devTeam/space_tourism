@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Project Figma Link = [figma_link](https://www.figma.com/file/VeX2ZJLDtHo7HzsUYjgnJU/space-tourism-website?node-id=0%3A1294&t=AHOjv3wjtBYBGOhX-0)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
